@@ -3,7 +3,7 @@
 #include <smart_ptr.h>
 
 int main() {
-    smart_ptr<int> data(new int[5]{ 0, 1, 2, 3, 4 });
+    smart_ptr<int> data(new int[5]{ 0, 1, 2, 3, 4 }, default_deleter<int[]>());
 
     std::cout << "Without checking on null" << "\n";
     std::cout << data[0] << "\n";
